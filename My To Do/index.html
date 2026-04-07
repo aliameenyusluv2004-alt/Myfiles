@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>My Tasks</h1>
+
+    <input type="text" id="taskInput" placeholder="Enter Task" />
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        const API = "http://127.0.0.1:5000/tasks";
+
+        function loadTasks() {
+            fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById("taskList");
+                list.innerHTML = "";
+
+                data.forEach((task, index) => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+                        ${task}
+                        <button onclick="deleteTask(${index})">Delete</button>
+                    `;
+                    list.appendChild(li);
+                });
+            });
+        }
+
+        function addTask() {
+            const input = document.getElementById("taskInput");
+
+            fetch(API, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ task: input.value })
+            })
+            .then(() => {
+                input.value = "";
+                loadTasks();
+            });
+        }
+
+        function deleteTask(index) {
+            fetch(`${API}/${index}`, { method: "DELETE" })
+            .then(() => loadTasks());
+        }
+
+        loadTasks();
+    </script>
+</body>
+</html>
