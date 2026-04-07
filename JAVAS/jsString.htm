@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript String</h1>
+    <p>Strings are used for storing text data.</p>
+    <script>
+    var a = "hello world";
+    document.write(a);
+    //1.Double quotes
+    let text = "Hello class"
+    let chat = "Hello miss joy i'll be glad to meet today"
+
+    //2.Single quotes
+    let text1 = 'Hello class'
+    //3.Backticks(Template Strings)
+    let text2 = `Hello class`
+
+    
+    //String length
+    //You can count the number of characters in the string. using .length 
+    console.log(text.length);
+    console.log("i love ice cream".length);
+
+    //Accessing characters in a string
+    //Each character has aposition (index)
+    //The first character is at index 0, the second at index 1, and so on.
+    console.log(text[0]); // H
+    console.log(text[6]); // c
+
+    //Changing case to uppercase
+    console.log(text.toUpperCase()); // HELLO CLASS
+    console.log("Hello miss joy i'll be glad to meet today".toUpperCase()); // HELLO MISS JOY I'LL BE GLAD TO MEET TODAY
+
+    //Changing case to lowercase
+    console.log(text.toLowerCase()); // hello class
+    console.log("Hello miss joy i'll be glad to meet today".toLowerCase()); // hello miss joy i'll be glad to meet today
+
+    //removing spaces use .trim()
+    //Sometimes users enter extra spaces
+    let text3 = "   Hello   ";
+    console.log(text3.trim()); // Hello class
+
+    //Extracting a part of a string
+    // using .slice(start, end)
+    console.log("Javascript".slice(0, 5)); // Java
+    console.log("Javascript".slice(4, 10)); // script
+
+    //Replacing a part of a string
+    //using .replace(old, new)
+    let text4 = "I like JavaScript";
+    let newText = text4.replace("JavaScript", "Python");
+    console.log(newText); // I like Python  
+
+    // template literals
+    // This is the modern way developers write strings
+    // it lets you insert variables inside strings
+    let name = "Alice";
+    let course= "JavaScript";
+    let language = "Python";
+
+    let sentence = `My name is ${name} and i am aspiring ${course}`
+
+    x ="i am a" + name
+
+    </script>
+</body>
+</html>

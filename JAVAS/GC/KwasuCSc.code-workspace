@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../KwasuCSc"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GC"
+	}
+}
