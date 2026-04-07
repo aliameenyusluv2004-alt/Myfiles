@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="INDEX.HTM">🏠</a></li>
+        <li><a href="porfolio.htm">Portfolio</a></li>
+    </ul>
+
+    <form action="submit.htm" method="post">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+
+        <p>
+        get method appends form data to the URL in name/value pairs
+        post method sends the form data inside the body of the HTTP request
+        </p>
+        <form action="tell.htm" method="post"></form>
+        <p>method has 3 base attributes which are enctype, method, and action for the form tag</p>
+        <p>while method also has a target attribute which are Post, get, and Dialog</p>
+        <input type="text" id="fname" name="fname"><br>
+        <input type="text" id="lname" name="lname"><br><br>
+    </form>
+
+    
+</body>
+</html>
